@@ -47,6 +47,7 @@ h1 { margin: 0 0 8px; font-size: 28px; }
   text-align: right;
 }
 
+/* 기본 버튼 스타일 */
 button {
   margin-top: 12px;
   width: 100%;
@@ -55,17 +56,21 @@ button {
   border-radius: 10px;
   font-size: 16px;
   cursor: pointer;
-  background: #2563eb;          /* ✅ 보기 좋은 블루 */
   color: #fff;
   transition: transform .04s ease, filter .12s ease;
 }
-button:hover { filter: brightness(0.95); }
-button:active { transform: translateY(1px); }
+
+/* ✅ 계산 버튼은 ID로 강제(검은색 덮어쓰기 방지) */
+#calcBtn {
+  background: #2563eb !important;
+}
+#calcBtn:hover { filter: brightness(0.95); }
+#calcBtn:active { transform: translateY(1px); }
 
 button.ghost{
   width: auto;
   margin-top: 0;
-  background: transparent;
+  background: transparent !important;
   color: #111;
   border: 1px solid #d9d9e3;
   padding: 10px 12px;
@@ -93,7 +98,7 @@ button.ghost.danger{
 .v { font-variant-numeric: tabular-nums; text-align: right; }
 .strong .k, .strong .v { font-weight: 700; }
 
-.v.neg { color: #d11a2a; } /* ✅ 손해(마이너스) 강조 */
+.v.neg { color: #d11a2a; }
 
 .hint{
   margin-top: 10px;
