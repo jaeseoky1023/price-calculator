@@ -44,6 +44,7 @@ h1 { margin: 0 0 8px; font-size: 28px; }
   border: 1px solid #d9d9e3;
   border-radius: 10px;
   font-size: 16px;
+  text-align: right;
 }
 
 button {
@@ -54,9 +55,12 @@ button {
   border-radius: 10px;
   font-size: 16px;
   cursor: pointer;
-  background: #111;
+  background: #2563eb;          /* ✅ 보기 좋은 블루 */
   color: #fff;
+  transition: transform .04s ease, filter .12s ease;
 }
+button:hover { filter: brightness(0.95); }
+button:active { transform: translateY(1px); }
 
 button.ghost{
   width: auto;
@@ -86,8 +90,10 @@ button.ghost.danger{
 }
 
 .k { color: #333; }
-.v { font-variant-numeric: tabular-nums; }
+.v { font-variant-numeric: tabular-nums; text-align: right; }
 .strong .k, .strong .v { font-weight: 700; }
+
+.v.neg { color: #d11a2a; } /* ✅ 손해(마이너스) 강조 */
 
 .hint{
   margin-top: 10px;
@@ -97,6 +103,11 @@ button.ghost.danger{
   border: 1px dashed #d9d9e3;
   padding: 10px 12px;
   border-radius: 10px;
+}
+.hint2{
+  margin-top: 8px;
+  font-size: 12px;
+  color: #666;
 }
 
 .rulesHead{
@@ -131,7 +142,10 @@ button.ghost.danger{
   border: 1px solid #d9d9e3;
   border-radius: 10px;
   font-size: 14px;
+  text-align: right;
 }
+
+.ruleRow select { text-align: left; }
 
 .smallBtnGroup{
   display:flex;
@@ -176,4 +190,3 @@ button.ghost.danger{
 @media (max-width: 640px) {
   .grid { grid-template-columns: 1fr; }
 }
-
