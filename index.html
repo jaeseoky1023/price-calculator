@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>예상판매가 · 판매가 더하기 계산기</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <main class="wrap">
+    <h1>예상판매가 · 판매가 더하기 계산기</h1>
+    <p class="sub">경쟁사 가격과 원가를 입력하면, 규칙에 따라 자동 계산됩니다.</p>
+
+    <section class="card">
+      <div class="grid">
+        <label class="field">
+          <span>경쟁사 가격 (원)</span>
+          <input id="competitorPrice" type="number" inputmode="numeric" min="0" placeholder="예: 25000" />
+        </label>
+
+        <label class="field">
+          <span>판매 원가 (원)</span>
+          <input id="costPrice" type="number" inputmode="numeric" min="0" placeholder="예: 17000" />
+        </label>
+      </div>
+
+      <button id="calcBtn" type="button">계산</button>
+
+      <div class="result">
+        <div class="row">
+          <span class="k">뺄 금액</span>
+          <span class="v" id="deductionText">-</span>
+        </div>
+        <div class="row">
+          <span class="k">예상판매가 (경쟁사 가격 - 뺄 금액)</span>
+          <span class="v" id="expectedPriceText">-</span>
+        </div>
+        <div class="row strong">
+          <span class="k">판매가 더하기 (예상판매가 - 판매 원가)</span>
+          <span class="v" id="addValueText">-</span>
+        </div>
+        <div class="hint" id="ruleHint">적용 규칙: -</div>
+      </div>
+    </section>
+
+    <section class="card rules">
+      <div class="rulesHead">
+        <h2>뺄 금액 규칙(웹에서 수정 가능)</h2>
+        <div class="rulesBtns">
+          <button id="addRuleBtn" type="button" class="ghost">규칙 추가</button>
+          <button id="resetRulesBtn" type="button" class="ghost danger">기본값으로 초기화</button>
+        </div>
+      </div>
+
+      <div class="rulesGrid rulesHeader">
+        <div>최소(원)</div>
+        <div>최대(원)</div>
+        <div>방식</div>
+        <div>값</div>
+        <div>우선순위</div>
+        <div>삭제</div>
+      </div>
+
+      <div id="rulesContainer"></div>
+
+      <p class="rulesNote">
+        * “최대(원)”을 비워두면 “이상(∞)”으로 처리됩니다. 규칙은 위에서 아래 순서로 먼저 매칭되는 것이 적용됩니다.
+      </p>
+    </section>
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+</html>
+
