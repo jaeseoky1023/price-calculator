@@ -9,18 +9,18 @@
 <body>
   <main class="wrap">
     <h1>예상판매가 · 판매가 더하기 계산기</h1>
-    <p class="sub">경쟁사 가격과 원가를 입력하면, 규칙에 따라 자동 계산됩니다.</p>
+    <p class="sub">경쟁사 기준 가격과 원가를 입력하면, 규칙에 따라 자동 계산됩니다. (ESC: 두 입력값 초기화)</p>
 
     <section class="card">
       <div class="grid">
         <label class="field">
-          <span>경쟁사 가격 (원)</span>
-          <input id="competitorPrice" type="number" inputmode="numeric" min="0" placeholder="예: 25000" />
+          <span>경쟁사 기준 가격 (원)</span>
+          <input id="competitorPrice" type="text" inputmode="numeric" autocomplete="off" placeholder="예: 25,000" />
         </label>
 
         <label class="field">
           <span>판매 원가 (원)</span>
-          <input id="costPrice" type="number" inputmode="numeric" min="0" placeholder="예: 17000" />
+          <input id="costPrice" type="text" inputmode="numeric" autocomplete="off" placeholder="예: 17,000" />
         </label>
       </div>
 
@@ -32,7 +32,7 @@
           <span class="v" id="deductionText">-</span>
         </div>
         <div class="row">
-          <span class="k">예상판매가 (경쟁사 가격 - 뺄 금액)</span>
+          <span class="k">예상판매가 (경쟁사 기준 가격 - 뺄 금액)</span>
           <span class="v" id="expectedPriceText">-</span>
         </div>
         <div class="row strong">
@@ -40,6 +40,7 @@
           <span class="v" id="addValueText">-</span>
         </div>
         <div class="hint" id="ruleHint">적용 규칙: -</div>
+        <div class="hint2">* 모든 금액 계산은 100원 단위(100원 미만 절삭)</div>
       </div>
     </section>
 
@@ -64,7 +65,7 @@
       <div id="rulesContainer"></div>
 
       <p class="rulesNote">
-        * “최대(원)”을 비워두면 “이상(∞)”으로 처리됩니다. 규칙은 위에서 아래 순서로 먼저 매칭되는 것이 적용됩니다.
+        * “최대(원)”을 비워두면 “이상(∞)”으로 처리됩니다. 규칙은 위→아래 순서로 먼저 매칭되는 것이 적용됩니다.
       </p>
     </section>
   </main>
@@ -72,4 +73,3 @@
   <script src="./app.js"></script>
 </body>
 </html>
-
