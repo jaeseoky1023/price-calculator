@@ -1,9 +1,9 @@
 const STORAGE_KEY = "priceCalcRulesV3";
 
 const DEFAULT_RULES = [
-  { min: 10000, max: 15000, type: "fixed", value: 1000 },
-  { min: 15100, max: 30000, type: "fixed", value: 1500 },
-  { min: 30100, max: 70000, type: "fixed", value: 2000 },
+  { min: 10000, max: 20000, type: "fixed", value: 1000 },
+  { min: 20100, max: 50000, type: "fixed", value: 1500 },
+  { min: 50100, max: 70000, type: "fixed", value: 2000 },
   { min: 70100, max: 100000, type: "fixed", value: 2500 },
   { min: 100000, max: null, type: "percent", value: 3 },
 ];
